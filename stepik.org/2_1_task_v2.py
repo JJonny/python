@@ -8,7 +8,7 @@ namespace = dict()
 n = int(input())
 for i in range(n):
  	line = input()
-	if ':' not in line:
+	if ':' not in line: #error on this line
 		namespace[line] = []
 	else:
 		exc, pred_exc  = line.split(' : ')		
