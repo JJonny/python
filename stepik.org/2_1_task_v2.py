@@ -8,7 +8,7 @@ namespace = dict()
 n = int(input())
 for i in range(n):
  	line = input()
-	if ':' not in line: #error on this line
+	if ':' not in line: 
 		namespace[line] = []
 	else:
 		exc, pred_exc  = line.split(' : ')		
@@ -16,7 +16,6 @@ for i in range(n):
 
 print(namespace)
 
-	# генерация листа приоритеов наследования
 
 def find_all_paths(ns, cur_class, cur_class_list=[], paretns=[]):  
 	# if cur_class == '':
@@ -35,7 +34,7 @@ def find_all_paths(ns, cur_class, cur_class_list=[], paretns=[]):
 		return 'Yes'
 	else:		
 		for sub_cl in paretns: #rel[obj]['predok']:
-			ret_val = 'No'
+			ret_val = "No"
 			if obj == sub_cl:
 				return 'No'
 			elif sub_cl in rel.keys(): 
