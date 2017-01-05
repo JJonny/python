@@ -1,6 +1,10 @@
 class multifilter:
-    def __iter__(self):        
-        return self
+    def __iter__(self): 
+        for ff in self.funcs:
+            for i in self.iterable:
+                if ff(i):
+                    yield i
+        
         
     def __init__(self, iterable, *funcs):
         self.iterable = iterable        
@@ -10,22 +14,15 @@ class multifilter:
     def judge_any(pos, neg):
         pass
         
-    def __next__(self):
-        for ff in self.funcs:
-            if self.counter == len(self.iterable)-1:
-                raise StopIteration
-            else:
-                self.counter += 1
-                return_value = ff(self.iterable[self.counter])
-                if return_value != None:
-                    return return_value
-                else:
-                    continue
+    #def __next__(self):
+        
             
-def mul2(x):
-    if x % 2 == 0:
-        return x
+def mul2(x):    
+    return x % 2 == 0
+
+def mul3(x):    
+    return x % 3 == 0
     
 a = [i for i in range(1, 10)]
 
-print(list(multifilter(a, mul2)))
+print(list(multifilter(a, mul2, mul3)))
