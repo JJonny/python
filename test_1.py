@@ -1,44 +1,18 @@
-import json
-import find_on_pathes
+tx = 'ÄËß ÏÐÎÂÅÐÊÈ ÊÎÍÂÅÐÒÀÖÈÈÎÊÎÍ×ÀÒÅËÜÍÛÉ ÐÀÑ×ÅÒ ÏÎ ÇÏ SDFSD SFDFSD  ÍÀ 3014000097401/234-4561111ÎÊÎÍ×ÀÒÅËÜÍÛÉ ÐÀÑ×ÅÒ ÏÎ ÇÏ SDFSD SFDFSD  ÍÀ 3014000097401/234-4561111'
 
-json_string = """ {
-  "orderID": 42,
-  "customerName": "John Smith",
-  "customerPhoneN": "555-1234",
-  "orderContents": [
-    {
-      "productID": 23,
-      "productName": "keyboard",
-      "quantity": 1
-    },
-    {
-      "productID": 13,
-      "productName": "mouse",
-      "quantity": 1
-    }
-  ],
-  "orderCompleted": true
-} """
-
-# распарсенная строка
-parsed_string = json.loads(json_string)
-ls = parsed_string['orderContents']
-for blok in ls:
-    for k, v in blok.items():
-        print(k, v)
-    print()
+print(tx[93:])
+print(tx[:93])
 
 
-
-p = [1,4,5,2,6,7,3,7]
-
-some_l = [100, 110, 111]
-ls = lambda ll: reduce(lambda a,b: a + b, ll, [])
-print(ls)
-
+def createGenerator():
+	for x in range(1,11):
+		if x % 2 == 0:
+			print(x)
+			yield x	
 
 
-#test module find_on_pathes
-#r = find_on_pathes.checkPathesFromEnvVar('SQL11')
-#find_on_pathes.printResult(r)
+#gener = createGenerator()
+
+for i in createGenerator():
+	print('for',i)
 
