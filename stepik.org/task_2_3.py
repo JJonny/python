@@ -41,3 +41,5 @@ def mul5(x):
 a = [i for i in range(31)] # [0, 1, 2, ... , 30]
 
 print(list(multifilter(a, mul2, mul3, mul5, judge=multifilter.judge_half)))
+
+C:\Users\Baranouski_AG\AppData\Local\Programs\Python\Python35-32\Scripts\;C:\Users\Baranouski_AG\AppData\Local\Programs\Python\Python35-32\;C:\Program Files\Microsoft Visual Studio\Common\Tools\WinNT;C:\Program Files\Microsoft Visual Studio\Common\MSDev98\Bin;C:\Program Files\Microsoft Visual Studio\Common\Tools;C:\Program Files\Microsoft Visual Studio\VC98\bin;C:\Program Files (x86)\Microsoft Visual Studio\Common\Tools\WinNT;C:\Program Files (x86)\Microsoft Visual Studio\Common\MSDev98\Bin;C:\Program Files (x86)\Microsoft Visual Studio\Common\Tools;C:\Program Files (x86)\Microsoft Visual Studio\VC98\bin;c:\program files (x86)\devstudio\sharedide\bin\ide;c:\program files (x86)\devstudio\sharedide\bin;c:\program files (x86)\devstudio\vc\bin;c:\SQL11\DLL;c:\SQL11\BIN
