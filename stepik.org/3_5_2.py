@@ -22,5 +22,5 @@ with open('Crimes.csv') as f:
 			print(d)
 			break
 print(d)
-	# for k,v in d.items():
-	# 	print(k,v)
+
+
