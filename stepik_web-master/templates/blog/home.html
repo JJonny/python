@@ -1,0 +1,43 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+	<h1>Home</h1>
+	{% for question in page_posts %}
+		<div class="title">
+			<h3><a class="title" href="{% url 'qa:question' question.id %}"> {{ question.title }} </a></h3>
+		</div>
+		<div class="date_author">
+			<p>{{ question.author }}, {{ question.added_at }}, like {{question.rating }} </p>
+		</div>
+			<!-- <p>{{ question.get_short_text }}</p> -->
+	{% endfor %}
+
+<div class="pagination">
+	<ul class="pagination">
+		{% if page_posts.has_previous %}
+			<li><a href="?page={{ page_posts.previous_page_number }}">&laquo;</a></li>
+		{% endif %}
+		
+		{% for num in page_posts.paginator.page_range %}
+			{% if num == page_posts.number %}
+				<li class="active"><a href="?page={{ num }}">{{ num }}</a></li>	
+			{% else %}
+				<li><a href="?page={{ num }}">{{ num }}</a></li>
+			{% endif %}
+			
+
+		{% endfor %}
+		
+		{% if page_posts.has_next %}
+			<li><a href="?page={{ page_posts.next_page_number }}">&raquo;</a></li>
+		{% endif %}
+	</ul>	
+</div>
+	
+
+{% endblock %}
