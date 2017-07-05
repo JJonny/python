@@ -3,6 +3,10 @@ import sys
 import re
 import shutil
 
+"""
+    get images from site.
+"""
+
 # pattern = "href *= *[\'\"](.*?)[\'\"]"
 pattern = "src *= *[\'\"](.*?jpg)[\'\"]"
 out_path = './images/'
